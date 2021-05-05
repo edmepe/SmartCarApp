@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.smartcar.sdk.*;
 import com.smartcar.sdk.data.*;
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -63,6 +64,7 @@ public class App extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar1 = new javax.swing.JProgressBar();
         login = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         res = new javax.swing.JTextArea();
@@ -77,6 +79,7 @@ public class App extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         battery = new javax.swing.JButton();
         tire = new javax.swing.JButton();
+        progress = new javax.swing.JProgressBar();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -255,26 +258,27 @@ public class App extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vehicle))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(vehiclenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(odometer)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(fuel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(battery)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(location)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(oil)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tire))
-                            .addComponent(clear))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vehiclenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(odometer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fuel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(battery)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(location)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(oil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tire)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(clear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(progress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -302,7 +306,9 @@ public class App extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(clear)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(clear)
+                    .addComponent(progress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -320,6 +326,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 
     private void vehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vehicleActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -359,6 +367,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_vehicleActionPerformed
 
     private void vehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vehiclesActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -394,6 +404,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_vehiclesActionPerformed
 
     private void odometerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odometerActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -435,6 +447,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_odometerActionPerformed
 
     private void fuelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fuelActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -466,10 +480,12 @@ public class App extends javax.swing.JFrame {
                     res.append("make = " + make + "\n");
                     res.append("model = " + model + "\n");
                     res.append("year = " + year + "\n");
-                    res.append("Fuel percent = " + fuelpercent + "%" + "\n");
+                    res.append("Fuel percent = " + (fuelpercent * 100) + "%" + "\n");
                     res.append("Fuel range = " + fuelrange + "km" + "\n");
                     res.append("Fuel remaining = " + fuelremaining + "l" + "\n");
                     res.append("------------------------------------------------------------------" + "\n");
+                    int u = (int) Math.round(fuelpercent * 100);
+                    progress.setValue(u);
                 }
             } catch (SmartcarException ex) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
@@ -480,6 +496,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_fuelActionPerformed
 
     private void locationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -525,9 +543,12 @@ public class App extends javax.swing.JFrame {
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         res.setText("");
+        progress.setValue(0);
     }//GEN-LAST:event_clearActionPerformed
 
     private void oilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oilActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -557,8 +578,10 @@ public class App extends javax.swing.JFrame {
                     res.append("make = " + make + "\n");
                     res.append("model = " + model + "\n");
                     res.append("year = " + year + "\n");
-                    res.append("Oil life remaining = " + oil + "%" + "\n");
+                    res.append("Oil life remaining = " + (oil * 100) + "%" + "\n");
                     res.append("------------------------------------------------------------------" + "\n");
+                    int u = (int) Math.round(oil * 100);
+                    progress.setValue(u);
                 }
             } catch (SmartcarException ex) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
@@ -573,6 +596,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_vehiclenumberActionPerformed
 
     private void batteryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batteryActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -603,9 +628,12 @@ public class App extends javax.swing.JFrame {
                     res.append("make = " + make + "\n");
                     res.append("model = " + model + "\n");
                     res.append("year = " + year + "\n");
-                    res.append("Percent battery remaining = " + percentremaining + "%" + "\n");
+                    res.append("Percent battery remaining = " + (percentremaining * 100) + "%" + "\n");
                     res.append("Battery range = " + range + "km" + "\n");
                     res.append("------------------------------------------------------------------" + "\n");
+                    int u = (int) Math.round(percentremaining * 100);
+                    progress.setValue(u);
+
                 }
             } catch (SmartcarException ex) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
@@ -616,6 +644,8 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_batteryActionPerformed
 
     private void tireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tireActionPerformed
+        res.setText("");
+        progress.setValue(0);
         try {
             BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\edgar\\AppData\\Local\\Temp\\access"));
             access = brTest.readLine();
@@ -716,6 +746,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton fuel;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton location;
     private javax.swing.JButton login;
@@ -724,6 +755,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton oil;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
+    private javax.swing.JProgressBar progress;
     private javax.swing.JTextArea res;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
